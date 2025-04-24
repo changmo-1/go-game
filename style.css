@@ -4,10 +4,10 @@ body {
   color: #fff;
   text-align: center;
   margin: 0;
-  padding: 50px;
+  padding: 0;
 }
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 20px;
+canvas {
+  background: #444;
+  display: block;
+  margin: 20px auto;
 }
