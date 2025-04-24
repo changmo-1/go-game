@@ -7,20 +7,17 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="start-screen">
+  <div id="game">
     <h1>GO! - 베타</h1>
     <p id="message">스틱맨 출근 중...</p>
-    <button id="startBtn">게임 시작</button>
-  </div>
-
-  <div id="game-ui" style="display: none;">
-    <div class="controls">
-      <button ontouchstart="moveLeft()">←</button>
-      <button ontouchstart="jump()">점프</button>
-      <button ontouchstart="moveRight()">→</button>
+    <button onclick="startGame()">게임 시작</button>
+    <div id="stickman" class="hidden"></div>
+    <div id="controls" class="hidden">
+      <button onclick="moveLeft()">←</button>
+      <button onclick="jump()">점프</button>
+      <button onclick="moveRight()">→</button>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
