@@ -1,15 +1,20 @@
 function startGame() {
-  document.getElementById("startButton").classList.add("hidden");
-  document.getElementById("status").style.display = "none";
-  document.getElementById("controls").classList.remove("hidden");
+  document.getElementById('startBtn').style.display = 'none';
+  document.getElementById('message').style.display = 'none';
+  document.getElementById('controls').style.display = 'block';
 }
 
 function moveLeft() {
-  console.log("왼쪽 이동");
+  // 왼쪽으로 이동 로직
+  console.log("왼쪽으로 이동");
 }
+
 function moveRight() {
-  console.log("오른쪽 이동");
+  // 오른쪽으로 이동 로직
+  console.log("오른쪽으로 이동");
 }
+
 function jump() {
-  console.log("점프");
+  // 점프 로직
+  console.log("점프!");
 }
