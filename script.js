@@ -1,30 +1,33 @@
-let player = null;
+let stickman;
 let position = 0;
+let isJumping = false;
 
-function startGame() {
-  document.getElementById("startBtn").classList.add("hidden");
-  document.getElementById("status").classList.add("hidden");
-  document.getElementById("controls").classList.remove("hidden");
-  document.getElementById("player").classList.remove("hidden");
-  player = document.getElementById("player");
-  position = 0;
-}
+window.onload = () => {
+  document.getElementById("startBtn").addEventListener("click", () => {
+    document.getElementById("start-screen").style.display = "none";
+    document.getElementById("game-container").style.display = "block";
+    stickman = document.getElementById("stickman");
+    position = 0;
+    stickman.style.left = position + "px";
+  });
 
-function moveLeft() {
-  position -= 10;
-  player.style.left = position + "px";
-}
+  document.getElementById("leftBtn").addEventListener("click", () => {
+    position -= 10;
+    stickman.style.left = position + "px";
+  });
 
-function moveRight() {
-  position += 10;
-  player.style.left = position + "px";
-}
+  document.getElementById("rightBtn").addEventListener("click", () => {
+    position += 10;
+    stickman.style.left = position + "px";
+  });
 
-function jump() {
-  player.style.transition = "bottom 0.2s ease";
-  player.style.position = "relative";
-  player.style.bottom = "30px";
-  setTimeout(() => {
-    player.style.bottom = "0px";
-  }, 200);
-}
+  document.getElementById("jumpBtn").addEventListener("click", () => {
+    if (isJumping) return;
+    isJumping = true;
+    stickman.style.top = "-30px";
+    setTimeout(() => {
+      stickman.style.top = "0px";
+      isJumping = false;
+    }, 300);
+  });
+};

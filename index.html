@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GO! - 베타</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div id="game">
+  <div id="start-screen">
     <h1>GO! - 베타</h1>
-    <p id="status">스틱맨 출근 중...</p>
-    <button id="startBtn" onclick="startGame()">게임 시작</button>
-    <div id="player" class="hidden"></div>
-    <div id="controls" class="hidden">
-      <button onclick="moveLeft()">←</button>
-      <button onclick="jump()">점프</button>
-      <button onclick="moveRight()">→</button>
+    <p>스틱맨 출근 중...</p>
+    <button id="startBtn">게임 시작</button>
+  </div>
+
+  <div id="game-container" style="display: none;">
+    <div id="stickman"></div>
+    <div id="controls">
+      <button id="leftBtn">←</button>
+      <button id="jumpBtn">점프</button>
+      <button id="rightBtn">→</button>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
