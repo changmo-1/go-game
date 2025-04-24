@@ -3,20 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GO! - 모바일</title>
+  <title>GO!</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="game">
     <h1>GO! - 베타</h1>
     <p>스틱맨 출근 중...</p>
-    <canvas id="gameCanvas" width="300" height="150"></canvas>
-    <div id="controls">
-      <button id="leftBtn">←</button>
-      <button id="jumpBtn">점프</button>
-      <button id="rightBtn">→</button>
-    </div>
+    <button onclick="startGame()">게임 시작</button>
   </div>
+  <canvas id="gameCanvas" width="300" height="150" style="display:none;"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
