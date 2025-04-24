@@ -1,13 +1,24 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background: #222;
-  color: #fff;
-  text-align: center;
   margin: 0;
   padding: 0;
+  background: #222;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+#game {
+  padding: 20px;
 }
 canvas {
-  background: #444;
+  background: #000;
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
+}
+#controls {
+  margin-top: 10px;
+}
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 0 5px;
 }

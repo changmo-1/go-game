@@ -1,66 +1,45 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
-const player = {
-  x: 100,
-  y: 300,
-  width: 40,
-  height: 40,
-  color: "#fff",
-  dy: 0,
-  dx: 0,
-  jumpPower: -10,
-  gravity: 0.5,
-  grounded: false,
-  speed: 3
-};
-
-const keys = {};
-
-document.addEventListener("keydown", e => keys[e.code] = true);
-document.addEventListener("keyup", e => keys[e.code] = false);
-
-function update() {
-  // 좌우 이동
-  player.dx = 0;
-  if (keys["ArrowLeft"]) player.dx = -player.speed;
-  if (keys["ArrowRight"]) player.dx = player.speed;
-
-  // 점프
-  if (keys["Space"] && player.grounded) {
-    player.dy = player.jumpPower;
-    player.grounded = false;
-  }
-
-  // 중력
-  player.dy += player.gravity;
-
-  // 이동 적용
-  player.x += player.dx;
-  player.y += player.dy;
-
-  // 바닥 충돌
-  if (player.y + player.height >= canvas.height) {
-    player.y = canvas.height - player.height;
-    player.dy = 0;
-    player.grounded = true;
-  }
-
-  // 벽 밖 제한
-  if (player.x < 0) player.x = 0;
-  if (player.x + player.width > canvas.width) player.x = canvas.width - player.width;
-}
+let x = 150;
+let y = 120;
+let vx = 0;
+let vy = 0;
+let isJumping = false;
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = player.color;
-  ctx.fillRect(player.x, player.y, player.width, player.height);
+  ctx.fillStyle = "#0f0";
+  ctx.fillRect(x, y, 20, 20);
 }
 
-function loop() {
+function update() {
+  x += vx;
+  y += vy;
+  if (y < 120) {
+    vy += 1;
+  } else {
+    vy = 0;
+    y = 120;
+    isJumping = false;
+  }
+}
+
+function gameLoop() {
   update();
   draw();
-  requestAnimationFrame(loop);
+  requestAnimationFrame(gameLoop);
 }
 
-loop();
+document.getElementById("leftBtn").addEventListener("touchstart", () => vx = -2);
+document.getElementById("leftBtn").addEventListener("touchend", () => vx = 0);
+document.getElementById("rightBtn").addEventListener("touchstart", () => vx = 2);
+document.getElementById("rightBtn").addEventListener("touchend", () => vx = 0);
+document.getElementById("jumpBtn").addEventListener("touchstart", () => {
+  if (!isJumping) {
+    vy = -12;
+    isJumping = true;
+  }
+});
+
+gameLoop();
