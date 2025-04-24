@@ -1,12 +1,16 @@
 body {
-  background: #111;
+  margin: 0;
+  padding: 0;
+  background: #222;
   color: white;
-  text-align: center;
   font-family: sans-serif;
-  padding: 40px;
+  text-align: center;
 }
 button {
   font-size: 20px;
-  padding: 15px 25px;
+  padding: 10px 20px;
   margin: 10px;
+}
+.controls {
+  margin-top: 50px;
 }
