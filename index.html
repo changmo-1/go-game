@@ -2,16 +2,17 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GO! - 베타</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="game">
     <h1>GO! - 베타</h1>
-    <p id="message">스틱맨 출근 중...</p>
+    <p id="status">스틱맨 출근 중...</p>
     <button id="startBtn" onclick="startGame()">게임 시작</button>
-    <div id="controls" style="display: none;">
+    <div id="player" class="hidden"></div>
+    <div id="controls" class="hidden">
       <button onclick="moveLeft()">←</button>
       <button onclick="jump()">점프</button>
       <button onclick="moveRight()">→</button>

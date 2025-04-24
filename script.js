@@ -1,20 +1,30 @@
+let player = null;
+let position = 0;
+
 function startGame() {
-  document.getElementById('startBtn').style.display = 'none';
-  document.getElementById('message').style.display = 'none';
-  document.getElementById('controls').style.display = 'block';
+  document.getElementById("startBtn").classList.add("hidden");
+  document.getElementById("status").classList.add("hidden");
+  document.getElementById("controls").classList.remove("hidden");
+  document.getElementById("player").classList.remove("hidden");
+  player = document.getElementById("player");
+  position = 0;
 }
 
 function moveLeft() {
-  // 왼쪽으로 이동 로직
-  console.log("왼쪽으로 이동");
+  position -= 10;
+  player.style.left = position + "px";
 }
 
 function moveRight() {
-  // 오른쪽으로 이동 로직
-  console.log("오른쪽으로 이동");
+  position += 10;
+  player.style.left = position + "px";
 }
 
 function jump() {
-  // 점프 로직
-  console.log("점프!");
+  player.style.transition = "bottom 0.2s ease";
+  player.style.position = "relative";
+  player.style.bottom = "30px";
+  setTimeout(() => {
+    player.style.bottom = "0px";
+  }, 200);
 }
