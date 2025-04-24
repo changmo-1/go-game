@@ -4,15 +4,19 @@ body {
   color: #fff;
   text-align: center;
   margin: 0;
-  padding: 50px;
-}
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  margin-top: 20px;
+  padding: 20px;
 }
 canvas {
   background: #000;
   display: block;
-  margin: 20px auto;
+  margin: 0 auto;
+}
+
+#mobile-controls {
+  margin-top: 10px;
+}
+#mobile-controls button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin: 0 5px;
 }

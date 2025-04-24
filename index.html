@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GO! - 키보드 조작</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GO! - 모바일 조작</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="game">
-    <h1>GO! - 캐릭터 조작</h1>
-    <p>← → 이동 / 스페이스바 점프</p>
-    <button onclick="startGame()">게임 시작</button>
+  <h1>GO! - 모바일 조작</h1>
+  <canvas id="gameCanvas" width="320" height="200"></canvas>
+  <div id="mobile-controls">
+    <button id="leftBtn">←</button>
+    <button id="jumpBtn">점프</button>
+    <button id="rightBtn">→</button>
   </div>
-  <canvas id="gameCanvas" width="400" height="200" style="display:none;"></canvas>
   <script src="script.js"></script>
 </body>
 </html>
