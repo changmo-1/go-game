@@ -2,19 +2,18 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GO! 모바일</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GO! - 베타</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div id="start-screen">
     <h1>GO! - 베타</h1>
-    <p>스틱맨 출근 중...</p>
-    <button onclick="startGame()">게임 시작</button>
+    <p id="message">스틱맨 출근 중...</p>
+    <button id="startBtn">게임 시작</button>
   </div>
 
   <div id="game-ui" style="display: none;">
-    <h1>GO! - 모바일 조작</h1>
     <div class="controls">
       <button ontouchstart="moveLeft()">←</button>
       <button ontouchstart="jump()">점프</button>
